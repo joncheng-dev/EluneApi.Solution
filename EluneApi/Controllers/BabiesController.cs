@@ -35,5 +35,14 @@ namespace EluneApi.Controllers
 
       return baby;
     }
+
+    // POST api/babies
+    [HttpPost]
+    public async Task<ActionResult<Baby>> Post(Baby baby)
+    {
+      _db.Babies.Add(baby);
+      await _db.SaveChangesAsync();
+      return CreatedAtAction(nameof(GetBaby), new { id = baby.BabyId }, baby);
+    }
   }
 }
