@@ -44,5 +44,41 @@ namespace EluneApi.Controllers
       await _db.SaveChangesAsync();
       return CreatedAtAction(nameof(GetBaby), new { id = baby.BabyId }, baby);
     }
+
+    // PUT: api/babies/5
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(int id, Baby baby)
+    {
+      if (id != baby.BabyId)
+      {
+        return BadRequest();
+      }
+
+      _db.Babies.Update(baby);
+
+      try
+      {
+        await _db.SaveChangesAsync();
+      }
+      catch (DbUpdateConcurrencyException)
+      {
+        if (!BabyExists(id))
+        {
+          return NotFound();
+        }
+        else
+        {
+          throw;
+        }
+      }
+
+      return NoContent();
+    }
+
+    private bool BabyExists(int id)
+    {
+      return _db.Babies.Any(e => e.BabyId == id);
+    }
+
   }
 }
