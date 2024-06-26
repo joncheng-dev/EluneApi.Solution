@@ -80,5 +80,20 @@ namespace EluneApi.Controllers
       return _db.Babies.Any(e => e.BabyId == id);
     }
 
+    // DELETE: api/Babies/6
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteBaby(int id)
+    {
+      Baby baby = await _db.Babies.FindAsync(id);
+      if(baby == null)
+      {
+        return NotFound();
+      }
+
+      _db.Babies.Remove(baby);
+      await _db.SaveChangesAsync();
+
+      return NoContent();
+    }
   }
 }
