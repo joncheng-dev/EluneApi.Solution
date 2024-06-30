@@ -7,7 +7,7 @@ namespace EluneApi.Models
   {
     public int BabyId { get; set; }
     [Required]
-    [StringLength(2, 50, ErrorMessage = "Name must be between 2 and 50 characters long.")]
+    [StringLength(50, MinimumLength = 5)]
     public string Name { get; set; }
     public DateTime BirthDate { get; set; }
   }
