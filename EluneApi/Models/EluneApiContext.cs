@@ -5,6 +5,7 @@ namespace EluneApi.Models
   public class EluneApiContext : DbContext
   {
     public DbSet<Baby> Babies { get; set; }
+    public DbSet<SleepTime> SleepTimes { get; set; }
 
     public EluneApiContext(DbContextOptions<EluneApiContext> options) : base(options)
     {
