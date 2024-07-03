@@ -26,7 +26,11 @@ namespace EluneApi.Models
         builder.Entity<SleepTime>()
         .HasData(
             new SleepTime { SleepTimeId = 1, StartTime = new DateTime(2024, 7, 1, 20, 0, 0, DateTimeKind.Utc), EndTime = new DateTime(2024, 7, 2, 5, 0, 0, DateTimeKind.Utc), BabyId = 1 },
-            new SleepTime { SleepTimeId = 2, StartTime = new DateTime(2024, 7, 2, 21, 30, 0, DateTimeKind.Utc), EndTime = new DateTime(2024, 7, 3, 6, 0, 0, DateTimeKind.Utc), BabyId = 1 }
+            new SleepTime { SleepTimeId = 2, StartTime = new DateTime(2024, 7, 2, 21, 30, 0, DateTimeKind.Utc), EndTime = new DateTime(2024, 7, 3, 6, 0, 0, DateTimeKind.Utc), BabyId = 1 },
+            new SleepTime { SleepTimeId = 3, StartTime = new DateTime(2024, 7, 3, 22, 0, 0, DateTimeKind.Utc), EndTime = new DateTime(2024, 7, 4, 6, 0, 0, DateTimeKind.Utc), BabyId = 2 },
+            new SleepTime { SleepTimeId = 4, StartTime = new DateTime(2024, 7, 2, 19, 0, 0, DateTimeKind.Utc), EndTime = new DateTime(2024, 7, 3, 4, 0, 0, DateTimeKind.Utc), BabyId = 3 },
+            new SleepTime { SleepTimeId = 5, StartTime = new DateTime(2024, 7, 2, 23, 0, 0, DateTimeKind.Utc), EndTime = new DateTime(2024, 7, 3, 7, 0, 0, DateTimeKind.Utc), BabyId = 4 },
+            new SleepTime { SleepTimeId = 6, StartTime = new DateTime(2024, 7, 3, 0, 0, 0, DateTimeKind.Utc), EndTime = new DateTime(2024, 7, 3, 8, 0, 0, DateTimeKind.Utc), BabyId = 5 }
         );
     }
   }
