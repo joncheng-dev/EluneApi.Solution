@@ -95,5 +95,21 @@ namespace EluneApi.Controllers
 
       return NoContent();
     }
+
+    // GET: api/Babies/{babyId}/SleepTimes
+    [HttpGet("{babyId}/SleepTimes")]
+    public async Task<ActionResult<IEnumerable<SleepTime>>> GetSleepTimesByBabyId(int babyId)
+    {
+      var sleepTimes = await _db.SleepTimes
+        .Where(s => s.BabyId == babyId)
+        .ToListAsync();
+
+      if (sleepTimes == null || sleepTimes.Count == 0)
+      {
+        return NotFound();
+      }
+
+      return sleepTimes;
+    }
   }
 }
