@@ -23,5 +23,13 @@ namespace EluneApi.Models
 
       public int BabyId { get; set; }
       public Baby Baby { get; set; }
+
+      public TimeSpan ElapsedTime
+      {
+        get
+        {
+          return EndTime - StartTime;
+        }
+      }
   }
 }
