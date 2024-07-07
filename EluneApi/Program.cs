@@ -1,3 +1,4 @@
+using EluneApi;
 using EluneApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

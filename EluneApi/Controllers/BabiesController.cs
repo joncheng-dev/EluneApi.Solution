@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EluneApi.Models;
+using EluneApi;
 
 namespace EluneApi.Controllers
 {
@@ -126,6 +127,27 @@ namespace EluneApi.Controllers
         }
 
         return sleepTime;
+    }
+
+    // POST: api/Babies/{babyId}/SleepTimes
+    [HttpPost("{babyId}/SleepTimes")]
+    public async Task<ActionResult<SleepTime>> PostSleepTime(int babyId, [FromBody] SleepTime sleepTime)
+    {
+      var baby = await _db.Babies.FindAsync(babyId);
+
+      if (baby == null)
+      {
+        return NotFound($"Baby with ID {babyId} not found.");
+      }
+
+      sleepTime.BabyId = babyId;
+      sleepTime.Baby = baby;
+
+      // Add sleep time to database
+      _db.SleepTimes.Add(sleepTime);
+      await _db.SaveChangesAsync();
+
+      return CreatedAtAction(nameof(GetSleepTime), new {babyId, sleepTimeId = sleepTime.SleepTimeId}, sleepTime);
     }
 
   }
