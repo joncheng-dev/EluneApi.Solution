@@ -17,7 +17,25 @@ namespace EluneApi.Models
 
   public class SleepTime
   {
-      public int SleepTimeId { get; set; }
+    public int SleepTimeId { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
+
+    public int BabyId { get; set; }
+    public Baby Baby { get; set; }
+
+    public TimeSpan ElapsedTime
+    {
+      get
+      {
+        return EndTime - StartTime;
+      }
+    }
+  }
+
+  public class FeedingTime
+    {
+      public int FeedingTimeId { get; set; }
       public DateTime StartTime { get; set; }
       public DateTime EndTime { get; set; }
 
@@ -31,5 +49,5 @@ namespace EluneApi.Models
           return EndTime - StartTime;
         }
       }
-  }
+    }  
 }
