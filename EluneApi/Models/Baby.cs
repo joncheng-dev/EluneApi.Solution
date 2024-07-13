@@ -12,7 +12,8 @@ namespace EluneApi.Models
     public DateTime BirthDate { get; set; }
 
     public ICollection<SleepTime> SleepTimes { get; set; }
-
+    public ICollection<FeedingTime> FeedingTimes { get; set; }
+    public ICollection<BathroomTime> BathroomTimes { get; set; }
   }
 
   public class SleepTime
@@ -34,20 +35,31 @@ namespace EluneApi.Models
   }
 
   public class FeedingTime
+  {
+    public int FeedingTimeId { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
+
+    public int BabyId { get; set; }
+    public Baby Baby { get; set; }
+
+    public TimeSpan ElapsedTime
     {
-      public int FeedingTimeId { get; set; }
-      public DateTime StartTime { get; set; }
-      public DateTime EndTime { get; set; }
-
-      public int BabyId { get; set; }
-      public Baby Baby { get; set; }
-
-      public TimeSpan ElapsedTime
+      get
       {
-        get
-        {
-          return EndTime - StartTime;
-        }
+        return EndTime - StartTime;
       }
-    }  
+    }
+  }
+
+  public class BathroomTime
+  {
+    public int BathroomTimeId { get; set; }
+    public DateTime Timestamp { get; set; }
+    public bool IsPee { get; set; }
+    public bool IsPoo { get; set; }
+    
+    public int BabyId { get; set; }
+    public Baby Baby { get; set; }
+  }    
 }
