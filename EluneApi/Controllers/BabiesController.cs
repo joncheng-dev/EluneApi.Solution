@@ -117,16 +117,16 @@ namespace EluneApi.Controllers
     [HttpGet("{babyId}/SleepTimes/{sleepTimeId}")]
     public async Task<ActionResult<SleepTime>> GetSleepTime(int babyId, int sleepTimeId)
     {
-        var sleepTime = await _db.SleepTimes
-            .Where(s => s.BabyId == babyId && s.SleepTimeId == sleepTimeId)
-            .FirstOrDefaultAsync();
+      var sleepTime = await _db.SleepTimes
+        .Where(s => s.BabyId == babyId && s.SleepTimeId == sleepTimeId)
+        .FirstOrDefaultAsync();
 
-        if (sleepTime == null)
-        {
-            return NotFound();
-        }
+      if (sleepTime == null)
+      {
+        return NotFound();
+      }
 
-        return sleepTime;
+      return sleepTime;
     }
 
     // POST: api/Babies/{babyId}/SleepTimes
@@ -148,6 +148,59 @@ namespace EluneApi.Controllers
       await _db.SaveChangesAsync();
 
       return CreatedAtAction(nameof(GetSleepTime), new {babyId, sleepTimeId = sleepTime.SleepTimeId}, sleepTime);
+    }
+
+    // GET: api/Babies/{babyId}/FeedingTimes
+    [HttpGet("{babyId}/FeedingTimes")]
+    public async Task<ActionResult<IEnumerable<FeedingTime>>> GetFeedingTimesByBabyId(int babyId)
+    {
+      var feedingTimes = await _db.FeedingTimes
+        .Where(s => s.BabyId == babyId)
+        .ToListAsync();
+
+      if (feedingTimes == null || feedingTimes.Count == 0)
+      {
+        return NotFound();
+      }
+
+      return feedingTimes;
+    }
+
+    // GET: api/Babies/{babyId}/FeedingTimes/{feedingTimeId}
+    [HttpGet("{babyId}/FeedingTimes/{feedingTimeId}")]
+    public async Task<ActionResult<FeedingTime>> GetFeedingTime(int babyId, int feedingTimeId)
+    {
+      var feedingTime = await _db.FeedingTimes
+        .Where(s => s.BabyId == babyId && s.FeedingTimeId == feedingTimeId)
+        .FirstOrDefaultAsync();
+
+      if (feedingTime == null)
+      {
+        return NotFound();
+      }
+
+      return feedingTime;
+    }
+
+    // POST: api/Babies/{babyId}/FeedingTimes
+    [HttpPost("{babyId}/FeedingTimes")]
+    public async Task<ActionResult<FeedingTime>> PostFeedingTime(int babyId, [FromBody] FeedingTime feedingTime)
+    {
+      var baby = await _db.Babies.FindAsync(babyId);
+
+      if (baby == null)
+      {
+        return NotFound($"Baby with ID {babyId} not found.");
+      }
+
+      feedingTime.BabyId = babyId;
+      feedingTime.Baby = baby;
+
+      // Add feeding time to database
+      _db.FeedingTimes.Add(feedingTime);
+      await _db.SaveChangesAsync();
+
+      return CreatedAtAction(nameof(GetFeedingTime), new {babyId, feedingTimeId = feedingTime.FeedingTimeId}, feedingTime);
     }
 
   }
