@@ -203,5 +203,20 @@ namespace EluneApi.Controllers
       return CreatedAtAction(nameof(GetFeedingTime), new {babyId, feedingTimeId = feedingTime.FeedingTimeId}, feedingTime);
     }
 
+    // GET: api/Babies/{babyId}/BathroomTimes
+    [HttpGet("{babyId}/BathroomTimes")]
+    public async Task<ActionResult<IEnumerable<BathroomTime>>> GetBathroomTimesByBabyId(int babyId)
+    {
+      var bathroomTimes = await _db.BathroomTimes
+        .Where(s => s.BabyId == babyId)
+        .ToListAsync();
+
+      if(bathroomTimes == null || bathroomTimes.Count == 0)
+      {
+        return NotFound();
+      }
+
+      return bathroomTimes;
+    }
   }
 }
