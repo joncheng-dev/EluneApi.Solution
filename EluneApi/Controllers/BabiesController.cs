@@ -218,5 +218,21 @@ namespace EluneApi.Controllers
 
       return bathroomTimes;
     }
+
+    // GET: api/Babies/{babyId}/BathroomTimes/{bathroomTimeId}
+    [HttpGet("{babyId}/BathroomTimes/{bathroomTimeId}")]
+    public async Task<ActionResult<BathroomTime>> GetBathroomTime(int babyId, int bathroomTimeId)
+    {
+      var bathroomTime = await _db.BathroomTimes
+        .Where(s => s.BabyId == babyId && s.BathroomTimeId == bathroomTimeId)
+        .FirstOrDefaultAsync();
+
+      if (bathroomTime == null)
+      {
+        return NotFound();
+      }
+
+      return bathroomTime;
+    }
   }
 }
