@@ -234,5 +234,26 @@ namespace EluneApi.Controllers
 
       return bathroomTime;
     }
+
+    // POST: api/Babies/{babyId}/BathroomTimes
+    [HttpPost("{babyId}/BathroomTimes")]
+    public async Task<ActionResult<BathroomTime>> PostBathroomTime(int babyId, [FromBody] BathroomTime bathroomTime)
+    {
+      var baby = await _db.Babies.FindAsync(babyId);
+
+      if (baby == null)
+      {
+        return NotFound($"Baby with ID {babyId} not found.");
+      }
+
+      bathroomTime.BabyId = babyId;
+      bathroomTime.Baby = baby;
+
+      // Add bathroom time to database
+      _db.BathroomTimes.Add(bathroomTime);
+      await _db.SaveChangesAsync();
+
+      return CreatedAtAction(nameof(GetBathroomTime), new {babyId, bathroomTimeId = bathroomTime.BathroomTimeId}, bathroomTime);
+    }
   }
 }
