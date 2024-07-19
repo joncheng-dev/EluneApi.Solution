@@ -150,6 +150,24 @@ namespace EluneApi.Controllers
       return CreatedAtAction(nameof(GetSleepTime), new {babyId, sleepTimeId = sleepTime.SleepTimeId}, sleepTime);
     }
 
+    // DELETE: api/Babies/{babyId}/SleepTimes/{sleepTimeId}
+    [HttpDelete("{babyId}/SleepTimes/{sleepTimeId}")]
+    public async Task<IActionResult> DeleteSleepTime(int babyId, int sleepTimeId)
+    {
+      var sleepTime = await _db.SleepTimes
+        .FirstOrDefaultAsync(s => s.BabyId == babyId && s.SleepTimeId = sleepTimeId);
+
+      if (sleepTime == null)
+      {
+        return NotFound();
+      }
+
+      _db.SleepTimes.Remove(sleepTime);
+      await _db.SaveChangesAsync();
+
+      return NoContent();
+    }
+
     // GET: api/Babies/{babyId}/FeedingTimes
     [HttpGet("{babyId}/FeedingTimes")]
     public async Task<ActionResult<IEnumerable<FeedingTime>>> GetFeedingTimesByBabyId(int babyId)
