@@ -4,12 +4,12 @@
 
 ## Description
 
-A Web API app that shares data about state and national parks in the State of Oregon complete with full CRUD functionality. Data is accessible by a client. Pagination is used to display a limited number of results at a time.
+A Web API app that shares data about a user's 'baby' sleeping, nursing, and bathroom times and durations with full CRUD functionality. Data is accessible by a client. 
 
 - _This web API application is written using C#, run using .NET framework, and database query and relationships handled with Entity Framework Core._
 - _Data annotations validate input._
-- _Full CRUD functionality for the `Park` class / model._
-- _Data storage is managed using MySQL. Entity Framework Core .NET Command-line Tools (or dotnet ef) is used for database version control -- migrations inform MySQL on database structure and updates._
+- _Full CRUD functionality for the `Baby` class / model._
+- _Data storage is managed using PostgreSQL. Entity Framework Core .NET Command-line Tools (or dotnet ef) is used for database version control -- migrations inform PostgreSQL on database structure and updates._
 - _Swashbuckle (Swagger, Swagger UI) and Postman are used to document and test API endpoints._
 
 ## Technologies Used
@@ -17,8 +17,8 @@ A Web API app that shares data about state and national parks in the State of Or
 - _C#_
 - _.NET 6_
 - _ASP.NET Core MVC_
-- _MySQL_
-- _MySQL Workbench_
+- _PostgreSQL_
+- _pgAdmin 4_
 - _Entity Framework Core_
 - _Swashbuckle v6.2.3_
 - _Postman v10.19_
