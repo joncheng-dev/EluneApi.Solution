@@ -44,7 +44,7 @@ _2. Navigate to where you want to place the cloned directory._
 _3. Clone the repository from the GitHub link by entering in this command:_
 
 > ```bash
-> $ git clone https://github.com/joncheng-dev/ParksApi.Solution.git
+> $ git clone https://github.com/joncheng-dev/EluneApi.Solution.git
 > ```
 
 #### Set up a Connection String to Database
