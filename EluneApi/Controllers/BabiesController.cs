@@ -155,7 +155,7 @@ namespace EluneApi.Controllers
     public async Task<IActionResult> DeleteSleepTime(int babyId, int sleepTimeId)
     {
       var sleepTime = await _db.SleepTimes
-        .FirstOrDefaultAsync(s => s.BabyId == babyId && s.SleepTimeId = sleepTimeId);
+        .FirstOrDefaultAsync(s => s.BabyId == babyId && s.SleepTimeId == sleepTimeId);
 
       if (sleepTime == null)
       {
