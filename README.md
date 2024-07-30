@@ -27,7 +27,7 @@ A Web API app that shares data about a user's 'baby' sleeping, nursing, and bath
 
 ### Required Technology
 
-- _Verify that you have the required technology installed for [PostgreSQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/) and [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/)._
+- _Verify that you have the required technology installed for [PostgreSQL](https://www.postgresql.org/download/) and [pgAdmin 4](https://www.pgadmin.org/download/)._
 - _Also check that Entity Framework Core's `dotnet-ef` tool is installed on your system so that it can perform database migrations and updates. Run the following command in your terminal:_
   > ```bash
   > $ dotnet tool install --global dotnet-ef --version 6.0.0
