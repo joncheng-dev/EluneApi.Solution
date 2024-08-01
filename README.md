@@ -32,6 +32,10 @@ A Web API app that shares data about a user's 'baby' sleeping, nursing, and bath
   > ```bash
   > $ dotnet tool install --global dotnet-ef --version 6.0.0
   > ```
+- _Check that you have Npgsql Package, the .NET data provider for PostGreSQL, installed. If not, do so with this command:_
+  > ```bash
+  > $ dotnet add package Npgsql
+  > ```
 
 ### Setting Up the Project
 
@@ -49,7 +53,7 @@ _3. Clone the repository from the GitHub link by entering in this command:_
 
 #### Set up a Connection String to Database
 
-_Navigate to the project's production directory `ParksApi.Solution/ParksApi`. Create a new file called `appsettings.json`. Within the `appsettings.json` file, add the following code snippet. Change the server and port as needed. Replace the `uid`, and `pwd` values with your username and password for MySQL. Under `database`, add a fitting name — although `parks_api` is suggested for clarity of purpose._
+_Navigate to the project's production directory `EluneApi.Solution/Elune`. Create a new file called `appsettings.json`. Within the `appsettings.json` file, add the following code snippet. Change the server and port as needed. Replace the `uid`, and `pwd` values with your username and password for PostGreSQL. Under `database`, add a fitting name — although `elune_api` is suggested for clarity of purpose._
 
 ```json
 {
@@ -61,7 +65,7 @@ _Navigate to the project's production directory `ParksApi.Solution/ParksApi`. Cr
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=[YOUR-DATABASE-NAME-HERE];uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+    "DefaultConnection": "Host=localhost;Port=5432;database=[YOUR-DATABASE-NAME-HERE];Username=myuser;Password=[YOUR-PASSWORD-HERE];"
   }
 }
 ```
