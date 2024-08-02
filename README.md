@@ -28,13 +28,13 @@ A Web API app that shares data about a user's 'baby' sleeping, nursing, and bath
 ### Required Technology
 
 - _Verify that you have the required technology installed for [PostgreSQL](https://www.postgresql.org/download/) and [pgAdmin 4](https://www.pgadmin.org/download/)._
-- _Also check that Entity Framework Core's `dotnet-ef` tool is installed on your system so that it can perform database migrations and updates. Run the following command in your terminal:_
-  > ```bash
-  > $ dotnet tool install --global dotnet-ef --version 6.0.0
-  > ```
 - _Check that you have Npgsql Package, the .NET data provider for PostGreSQL, installed. If not, do so with this command:_
   > ```bash
   > $ dotnet add package Npgsql
+  > ```
+- _Check that Entity Framework Core's `dotnet-ef` tool is installed on your system so that it can perform database migrations and updates. Run the following command in your terminal:_
+  > ```bash
+  > $ dotnet tool install --global dotnet-ef --version 6.0.0
   > ```
 
 ### Setting Up the Project
