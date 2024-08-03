@@ -97,7 +97,7 @@ _In the terminal, while in the project's production directory `ParksApi`, run th
 
 ## Launching the API
 
-_In the command line, while in the project's production directory `ParksApi.Solution/ParksApi`, enter the command `dotnet run` to compile and execute the application. Afterwards, the API is accessible via a client._
+_In the command line, while in the project's production directory `EluneApi.Solution/Elune`, enter the command `dotnet run` to compile and execute the application. Afterwards, the API is accessible via a client._
 
 > ```bash
 > $ dotnet run
