@@ -109,7 +109,7 @@ To explore the API endpoints, use a client such as a browser, Postman, or Swagge
 
 #### Note on Pagination
 
-ParksApi is set to return the first index of results, and show up to 10 results per page. To make modifications, opt to do one of the following:
+EluneApi is set to return the first index of results, and show up to 10 results per page. To make modifications, opt to do one of the following:
 
 - _Navigate to the project's Controller directory, file `ParksController.cs` to edit the HttpGet controller's Get() action parameters `pageIndex = 1` and `int pageSize = 10`. This allows customization of values for pageIndex and pageSize._
 - _Change the parameters in the http request: `http://localhost:5000/api/Parks?pageIndex=1&pageSize=10`. Set the parameters `pageIndex` and `pageSize` to different integer values, such as 2 for pageIndex to see the second page of all results, and 20 for pageSize to return twenty results per page, respectively._
