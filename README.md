@@ -28,7 +28,7 @@ A Web API app that shares data about a user's 'baby' sleeping, nursing, and bath
 ### Required Technology
 
 - _Verify that you have the required technology installed for [PostgreSQL](https://www.postgresql.org/download/) and [pgAdmin 4](https://www.pgadmin.org/download/)._
-- _Check that you have Npgsql Package, the .NET data provider for PostGreSQL, installed. If not, do so with this command:_
+- _Check that you have Npgsql Package, the .NET data provider for PostGreSQL, installed. If not, you may do so with this command:_
   > ```bash
   > $ dotnet add package Npgsql
   > ```
@@ -53,7 +53,7 @@ _3. Clone the repository from the GitHub link by entering in this command:_
 
 #### Set up a Connection String to Database
 
-_Navigate to the project's production directory `EluneApi.Solution/Elune`. Create a new file called `appsettings.json`. Within the `appsettings.json` file, add the following code snippet. Change the server and port as needed. Replace the `uid`, and `pwd` values with your username and password for PostGreSQL. Under `database`, add a fitting name — although `elune_api` is suggested for clarity of purpose._
+_Navigate to the project's production directory `EluneApi.Solution/EluneApi`. Create a new file called `appsettings.json`. Within the `appsettings.json` file, add the following code snippet. Change the server and port as needed. Replace the `uid`, and `pwd` values with your username and password for PostGreSQL. Under `database`, add a fitting name — although `elune_api` is suggested for clarity of purpose._
 
 ```json
 {
