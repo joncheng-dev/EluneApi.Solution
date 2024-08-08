@@ -72,7 +72,7 @@ _Navigate to the project's production directory `EluneApi.Solution/EluneApi`. Cr
 
 #### Check for Port Conflicts
 
-_In this app's `Properties/launchSettings.json` file, check to see that the `applicationUrl` key is set to a different set of ports than your client app — if using one to query the API endpoints. In the ParksApi app, we have ports set to 5001 and 5000 as shown in the `launchSettings.json` snippet below._
+_In this app's `Properties/launchSettings.json` file, check to see that the `applicationUrl` key is set to a different set of ports than your client app — if using one to query the API endpoints. In the EluneApi app, we have ports set to 5001 and 5000 as shown in the `launchSettings.json` snippet below._
 
 ```json
 "EluneApi": {
