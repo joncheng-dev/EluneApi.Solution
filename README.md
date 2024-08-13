@@ -89,7 +89,7 @@ _In this app's `Properties/launchSettings.json` file, check to see that the `app
 
 #### Generate the Database
 
-_In the terminal, while in the project's production directory `EluneApi`, run the command below. The repository's migrations will be used to generate the database with appropriate modifications via Entity Framework Core. You may opt to verify that the database has been created successfully in MySQL Workbench._
+_In the terminal, while in the project's production directory `EluneApi`, run the command below. The repository's migrations will be used to generate the database with appropriate modifications via Entity Framework Core. You may opt to verify that the database has been created successfully in PostGreSQL._
 
 > ```bash
 > $ dotnet ef database update
