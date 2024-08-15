@@ -65,7 +65,7 @@ _Navigate to the project's production directory `EluneApi.Solution/EluneApi`. Cr
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Port=5432;database=[YOUR-DATABASE-NAME-HERE];Username=myuser;Password=[YOUR-PASSWORD-HERE];"
+    "DefaultConnection": "Host=localhost;Port=5432;database=[YOUR-DATABASE-NAME-HERE];User Id=myuser;Password=[YOUR-PASSWORD-HERE];"
   }
 }
 ```
