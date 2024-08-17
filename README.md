@@ -115,11 +115,10 @@ Base URL: `http://localhost:5000`
 
 | Request Type |      Path       |
 | :----------: | :-------------: |
-|     GET      |   /api/parks    |
-|     GET      | /api/parks/{id} |
-|     POST     |   /api/parks    |
-|     PUT      | /api/parks/{id} |
-|    DELETE    | /api/parks/{id} |
+|     GET      | /api/baby/{id} |
+|     POST     |   /api/baby    |
+|     PUT      | /api/baby/{id} |
+|    DELETE    | /api/baby/{id} |
 
 ## Known Bugs
 
