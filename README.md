@@ -123,7 +123,7 @@ Base URL:
 
 ## Known Bugs
 
-- _Currently no known bugs. Message if you happen upon any: joncheng.dev@gmail.com_
+- _Currently no known bugs. Please send a message if you happen upon any: joncheng.dev@gmail.com_
 
 ## License
 
